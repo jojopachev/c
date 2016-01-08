@@ -3,7 +3,7 @@
  /* function calculating primes*/
 int prime(int n) 
 {
-  printf("prime called with n = %d\n",n);
+  printf("prime called with n = %d\n", n);
   return 0; 
 }
 
@@ -18,6 +18,14 @@ int main(int argc, char** argv)
   }
   
   arg_n = atoi(argv[1]);
-  prime(arg_n); 
+  if (prime(arg_n))
+  {
+    printf ("Number %d is prime\n",arg_n);
+  }
+  else  
+  {
+    printf ("Number %d is not prime\n",arg_n);
+  }
+ 
   return 0; 
 }

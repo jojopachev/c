@@ -1,10 +1,24 @@
  #include<stdio.h>
- #include <stdlib.h>
+ #include<stdlib.h>
+ #include<math.h>
+ 
  /* function calculating primes*/
 int prime(int n) 
 {
-  printf("prime called with n = %d\n", n);
-  return 0; 
+  int scan_n = sqrt(n);
+
+  
+  printf("prime called with n = %d scan_n = %d\n", n, scan_n);
+  
+  if (n == 2)
+    return 1;
+    
+  if (n % 2 == 0)
+  {
+    return 0;
+  }
+  
+  return 1; 
 }
 
 int main(int argc, char** argv)
@@ -26,6 +40,7 @@ int main(int argc, char** argv)
   {
     printf ("Number %d is not prime\n",arg_n);
   }
+  
  
   return 0; 
 }

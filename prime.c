@@ -3,12 +3,12 @@
  #include<math.h>
  
  /* function calculating primes*/
-int prime(int n) 
+ int prime(long long int n) 
 {
-  int scan_n = sqrt(n);
+  long long int scan_n = sqrt(n);
 
-  
-  printf("prime called with n = %d scan_n = %d\n", n, scan_n);
+  int i;
+  printf("prime called with n = %lld scan_n = %lld\n", n, scan_n);
   
   if (n == 2)
     return 1;
@@ -18,12 +18,20 @@ int prime(int n)
     return 0;
   }
   
+  for ( i = 3; i <= scan_n; i += 2)
+  {
+    if (n % i == 0)
+    {
+      return 0;
+    }
+  }
+  
   return 1; 
 }
 
 int main(int argc, char** argv)
 {
-  int arg_n;
+  long long int arg_n;
   
   if (argc < 2)
   {
@@ -31,16 +39,16 @@ int main(int argc, char** argv)
     exit(1);
   }
   
-  arg_n = atoi(argv[1]);
+  arg_n = atoll(argv[1]);
+  
   if (prime(arg_n))
   {
-    printf ("Number %d is prime\n",arg_n);
+    printf("Number %lld is prime\n",arg_n);
   }
   else  
   {
-    printf ("Number %d is not prime\n",arg_n);
+    printf ("Number %lld is not prime\n",arg_n);
   }
-  
  
   return 0; 
 }

@@ -3,20 +3,30 @@
 
 int arr_sum(int* a, int n)
 {
-  return 0;
+  int i = 0;
+  int s = 0;
+  
+  for (i = 0; i < n; i++)
+  {
+    s += a[i];
+  }
+ 
+  return s;
 }
  
 int main(int argc, char** argv)
 {
-  int i = 0;  
+    
   int* arr;
-  
+  int i = 0;
   
   for (i = 0; i < argc; i++)
   {
     printf("argv[%d] = %s\n",i,argv[i]);     
   }
+  
   argc --;
+  
   if (argc)
   {
     arr = (int*)malloc(argc * sizeof(int));
@@ -27,13 +37,15 @@ int main(int argc, char** argv)
       exit(1);
     }
     
-    for (i = 1; i < argc; i++)
+    for (i = 0; i <= argc; i++)
     {
       arr[i-1] = atoi(argv[i]);
       printf("%d\n", arr[i-1]);
     }
-    printf("arr = %d\n", arr_sum(arr, argc - 1));
+    
+    printf("arr_sum = %d\n", arr_sum(arr, argc));
     free(arr);
   }
+  
   return 0;
 }

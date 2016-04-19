@@ -14,7 +14,7 @@ int main()
     int arr_i;
     int s = 0;
     
-    for( arr_i = 0; arr_i < n; arr_i++)
+    for( arr_i = 0; arr_i < n arr_i++)
     {     
        scanf("%d",&arr[arr_i]);
        s += arr[arr_i];
